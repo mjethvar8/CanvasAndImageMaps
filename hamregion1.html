@@ -1,0 +1,485 @@
+<!--stAuth10065: I Mahesh Jethva, 00327510 certify that this material is my original work. 
+No other person's work has been used without due acknowledgement. 
+I have not made my work available to anyone else.-->
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Lab 2 --  Part A</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="css/normalize.min.css">
+        <link rel="stylesheet" href="css/main.css">
+        <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+    </head>
+    <body>
+
+        <h1 id = "cities" align="center">The Cities of Hamilton Region</h1>
+		
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
+        <script src="js/plugins.js"></script>
+        <script src="js/main.js"></script>
+		<script>
+		$(document).ready(function()
+{
+	var canvas = document.getElementById("canvashamilton");
+	var context = canvas.getContext("2d");
+		
+	$("#ancasterdiv").hide();
+	$("#flamboroughdiv").hide();
+	$("#dundasdiv").hide();
+	$("#stoneycreekdiv").hide();
+	$("#glanbrookdiv").hide();
+	$("#hamiltondiv").hide();
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////			
+		
+	$('#flamborough').hover(function()
+	{
+		var flamboroughCoords = document.getElementById("flamborough").coords.split(',');
+		context.strokeStyle = "rgba(193, 66, 66, 0.2)";
+		context.fillStyle = "rgba(193, 66, 66, 0.2)";
+		context.lineWidth = 1;
+		context.beginPath();
+		context.moveTo(flamboroughCoords[0],flamboroughCoords[1]);
+		for (x = 2, y = 3; x < flamboroughCoords.length-1, y < flamboroughCoords.length; x+=2, y+=2) 
+		{
+			context.lineTo(flamboroughCoords[x],flamboroughCoords[y]);
+		}
+		context.lineTo(flamboroughCoords[0],flamboroughCoords[1]);
+		context.closePath();
+		context.stroke();
+		context.fill();
+	}, 
+	function()
+	{
+		context.clearRect(0, 0, canvas.width, canvas.height);
+	});
+			
+	$('#flamborough').click(function() 
+	{
+		$("#flamboroughdiv").toggle(function()
+		{
+			$("#flamboroughdiv").show();
+			var clicks = $(this).data('clicks');
+			if (clicks) 
+			{
+				context.clearRect(0, 0, canvas.width, canvas.height);
+				var flamboroughCoords = document.getElementById("flamborough").coords.split(',');
+				context.strokeStyle = "rgba(193, 66, 66, 0.4)";
+				context.fillStyle = "rgba(193, 66, 66, 0.4)";
+				context.lineWidth = 1;
+				context.beginPath();
+				context.moveTo(flamboroughCoords[0],flamboroughCoords[1]);
+				for (x = 2, y = 3; x < flamboroughCoords.length-1, y < flamboroughCoords.length; x+=2, y+=2) 
+				{
+					context.lineTo(flamboroughCoords[x],flamboroughCoords[y]);
+				}
+				context.lineTo(flamboroughCoords[0],flamboroughCoords[1]);
+				context.stroke();
+				context.fill();			
+				$("#flamboroughdiv").hide();
+			} 
+			else 
+			{
+				context.clearRect(0, 0, canvas.width, canvas.height);
+				var flamboroughCoords = document.getElementById("flamborough").coords.split(',');
+				context.strokeStyle = "rgba(46, 138, 138, 0.4)";
+				context.fillStyle = "rgba(46, 138, 138, 0.4)";
+				context.lineWidth = 1;
+				context.beginPath();
+				context.moveTo(flamboroughCoords[0],flamboroughCoords[1]);
+				for (x = 2, y = 3; x < flamboroughCoords.length-1, y < flamboroughCoords.length; x+=2, y+=2) 
+				{
+					context.lineTo(flamboroughCoords[x],flamboroughCoords[y]);
+				}
+				context.lineTo(flamboroughCoords[0],flamboroughCoords[1]);
+				context.stroke();
+				context.fill();
+			}
+			$(this).data("clicks", !clicks);
+		});
+	});
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////				
+			
+	$('#ancaster').hover(function()
+	{
+		var ancasterCoords = document.getElementById("ancaster").coords.split(',');
+		context.strokeStyle = "rgba(193, 66, 66, 0.2)";
+		context.fillStyle = "rgba(193, 66, 66, 0.2)";
+		context.lineWidth = 1;
+		context.beginPath();
+		context.moveTo(ancasterCoords[0],ancasterCoords[1]);
+		for (x = 2, y = 3; x < ancasterCoords.length-1, y < ancasterCoords.length; x+=2, y+=2) 
+		{
+			context.lineTo(ancasterCoords[x],ancasterCoords[y]);
+		}
+		context.lineTo(ancasterCoords[0],ancasterCoords[1]);
+		context.closePath();
+		context.stroke();
+		context.fill();
+	}, 
+	function()
+	{
+		context.clearRect(0, 0, canvas.width, canvas.height);
+	});
+			
+			
+	$("#ancaster").click(function()
+	{
+		$("#ancasterdiv").toggle(function()
+		{
+			$('#ancaster').unbind("hover");
+			$("#ancasterdiv").show();
+			var ancasterCoords = document.getElementById("ancaster").coords.split(',');
+			context.strokeStyle = "rgba(51, 51, 255, 0.2)";
+			context.fillStyle = "rgba(51, 51 , 255, 0.2)";
+			context.lineWidth = 1;
+			context.beginPath();
+			context.moveTo(ancasterCoords[0],ancasterCoords[1]);
+			for (x = 2, y = 3; x < ancasterCoords.length-1, y < ancasterCoords.length; x+=2, y+=2) 
+			{
+				context.lineTo(ancasterCoords[x],ancasterCoords[y]);
+			}
+			context.lineTo(ancasterCoords[0],ancasterCoords[1]);
+			context.closePath();
+			context.stroke();
+			context.fill();
+		});
+	});	
+			
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////						
+			
+	$('#glanbrook').hover(function()
+	{
+		var glanbrookCoords = document.getElementById("glanbrook").coords.split(',');
+		context.strokeStyle = "rgba(193, 66, 66, 0.2)";
+		context.fillStyle = "rgba(193, 66, 66, 0.2)";
+		context.lineWidth = 1;
+		context.beginPath();
+		context.moveTo(glanbrookCoords[0],glanbrookCoords[1]);
+		for (x = 2, y = 3; x < glanbrookCoords.length-1, y < glanbrookCoords.length; x+=2, y+=2) 
+		{
+			context.lineTo(glanbrookCoords[x],glanbrookCoords[y]);
+		}
+		context.lineTo(glanbrookCoords[0],glanbrookCoords[1]);
+		context.closePath();
+		context.stroke();
+		context.fill();
+	}, function()
+	{
+		context.clearRect(0, 0, canvas.width, canvas.height);
+	});
+			
+	$('#glanbrook').click(function() 
+	{
+		$("#glanbrookdiv").toggle(function()
+		{
+			$("#glanbrookdiv").show();
+			var clicks = $(this).data('clicks');
+			if (clicks) 
+			{
+				context.clearRect(0, 0, canvas.width, canvas.height);
+				var glanbrookCoords = document.getElementById("glanbrook").coords.split(',');
+				context.strokeStyle = "rgba(193, 66, 66, 0.4)";
+				context.fillStyle = "rgba(193, 66, 66, 0.4)";
+				context.lineWidth = 1;
+				context.beginPath();
+				context.moveTo(glanbrookCoords[0],glanbrookCoords[1]);
+				for (x = 2, y = 3; x < glanbrookCoords.length-1, y < glanbrookCoords.length; x+=2, y+=2) 
+				{
+					context.lineTo(glanbrookCoords[x],glanbrookCoords[y]);
+				}
+				context.lineTo(glanbrookCoords[0],glanbrookCoords[1]);
+				context.stroke();
+				context.fill();	
+				$("#glanbrookdiv").hide();				
+			} 
+			else 
+			{
+				context.clearRect(0, 0, canvas.width, canvas.height);
+				var glanbrookCoords = document.getElementById("glanbrook").coords.split(',');
+				context.strokeStyle = "rgba(46, 138, 138, 0.4)";
+				context.fillStyle = "rgba(46, 138, 138, 0.4)";
+				context.lineWidth = 1;
+				context.beginPath();
+				context.moveTo(glanbrookCoords[0],glanbrookCoords[1]);
+				for (x = 2, y = 3; x < glanbrookCoords.length-1, y < glanbrookCoords.length; x+=2, y+=2) 
+				{
+					context.lineTo(glanbrookCoords[x],glanbrookCoords[y]);
+				}
+				context.lineTo(glanbrookCoords[0],glanbrookCoords[1]);
+				context.stroke();
+				context.fill();
+			}
+			$(this).data("clicks", !clicks);
+		});
+	});	
+			
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////	
+			
+	$("#hamilton").hover(function()
+	{
+		var hamiltonCoords = document.getElementById("hamilton").coords.split(',');
+		context.strokeStyle = "rgba(193, 66, 66, 0.2)";
+		context.fillStyle = "rgba(193, 66, 66, 0.2)";
+		context.lineWidth = 1;
+		context.beginPath();
+		context.moveTo(hamiltonCoords[0],hamiltonCoords[1]);
+		for (x = 2, y = 3; x < hamiltonCoords.length-1, y < hamiltonCoords.length; x+=2, y+=2) 
+		{
+			context.lineTo(hamiltonCoords[x],hamiltonCoords[y]);
+		}
+		context.lineTo(hamiltonCoords[0],hamiltonCoords[1]);
+		context.closePath();
+		context.stroke();
+		context.fill();
+		}, 
+		function()
+		{
+			context.clearRect(0, 0, canvas.width, canvas.height);
+		});
+			
+	$("#hamilton").click(function() 
+	{
+		$("#hamiltondiv").toggle(function()
+		{
+			$("#hamiltondiv").show();
+			var clicks = $(this).data('clicks');
+			if (clicks) 
+			{
+				context.clearRect(0, 0, canvas.width, canvas.height);
+				var hamiltonCoords = document.getElementById("hamilton").coords.split(',');
+				context.strokeStyle = "rgba(193, 66, 66, 0.4)";
+				context.fillStyle = "rgba(193, 66, 66, 0.4)";
+				context.lineWidth = 1;
+				context.beginPath();
+				context.moveTo(hamiltonCoords[0],hamiltonCoords[1]);
+				for (x = 2, y = 3; x < hamiltonCoords.length-1, y < hamiltonCoords.length; x+=2, y+=2) 
+				{
+					context.lineTo(hamiltonCoords[x],hamiltonCoords[y]);
+				}	
+				context.lineTo(hamiltonCoords[0],hamiltonCoords[1]);
+				context.stroke();
+				context.fill();
+				$("#hamiltondiv").hide();
+			} 
+			else	 
+			{
+				context.clearRect(0, 0, canvas.width, canvas.height);
+				var hamiltonCoords = document.getElementById("hamilton").coords.split(',');
+				context.strokeStyle = "rgba(46, 138, 138, 0.4)";
+				context.fillStyle = "rgba(46, 138, 138, 0.4)";
+				context.lineWidth = 1;
+				context.beginPath();
+				context.moveTo(hamiltonCoords[0],hamiltonCoords[1]);
+				for (x = 2, y = 3; x < hamiltonCoords.length-1, y < hamiltonCoords.length; x+=2, y+=2) 
+				{
+					context.lineTo(hamiltonCoords[x],hamiltonCoords[y]);
+				}
+				context.lineTo(hamiltonCoords[0],hamiltonCoords[1]);
+				context.stroke();
+				context.fill();
+			}
+			$(this).data("clicks", !clicks);
+		});
+	});
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////		
+			
+	$('#stoneycreek').hover(function()
+	{
+		var stoneycreekCoords = document.getElementById("stoneycreek").coords.split(',');
+		context.strokeStyle = "rgba(193, 66, 66, 0.2)";
+		context.fillStyle = "rgba(193, 66, 66, 0.2)";
+		context.lineWidth = 1;
+		context.beginPath();
+		context.moveTo(stoneycreekCoords[0],stoneycreekCoords[1]);
+		for (x = 2, y = 3; x < stoneycreekCoords.length-1, y < stoneycreekCoords.length; x+=2, y+=2) 
+		{
+			context.lineTo(stoneycreekCoords[x],stoneycreekCoords[y]);
+		}
+		context.lineTo(stoneycreekCoords[0],stoneycreekCoords[1]);
+		context.closePath();
+		context.stroke();
+		context.fill();
+	}, 
+	function()
+	{
+		context.clearRect(0, 0, canvas.width, canvas.height);
+	});
+		
+	$('#stoneycreek').click(function() 
+	{
+		$("#stoneycreekdiv").toggle(function()
+		{
+			$("#stoneycreekdiv").show();
+			var clicks = $(this).data('clicks');
+			if (clicks) 
+			{
+				context.clearRect(0, 0, canvas.width, canvas.height);
+				var stoneycreekCoords = document.getElementById("stoneycreek").coords.split(',');
+				context.strokeStyle = "rgba(193, 66, 66, 0.4)";
+				context.fillStyle = "rgba(193, 66, 66, 0.4)";
+				context.lineWidth = 1;
+				context.beginPath();
+				context.moveTo(stoneycreekCoords[0],stoneycreekCoords[1]);
+				for (x = 2, y = 3; x < stoneycreekCoords.length-1, y < stoneycreekCoords.length; x+=2, y+=2) 
+				{
+					context.lineTo(stoneycreekCoords[x],stoneycreekCoords[y]);
+				}
+				context.lineTo(stoneycreekCoords[0],stoneycreekCoords[1]);
+				context.stroke();
+				context.fill();	
+				$("#stoneycreekdiv").hide();
+			}
+			else 
+			{
+				context.clearRect(0, 0, canvas.width, canvas.height);
+				var stoneycreekCoords = document.getElementById("stoneycreek").coords.split(',');
+				context.strokeStyle = "rgba(46, 138, 138, 0.4)";
+				context.fillStyle = "rgba(46, 138, 138, 0.4)";
+				context.lineWidth = 1;
+				context.beginPath();
+				context.moveTo(stoneycreekCoords[0],stoneycreekCoords[1]);
+				for (x = 2, y = 3; x < stoneycreekCoords.length-1, y < stoneycreekCoords.length; x+=2, y+=2) 
+				{
+					context.lineTo(stoneycreekCoords[x],stoneycreekCoords[y]);
+				}
+				context.lineTo(stoneycreekCoords[0],stoneycreekCoords[1]);
+				context.stroke();
+				context.fill();
+			}
+			$(this).data("clicks", !clicks);
+		});
+	});
+		
+		
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////	
+			
+	$('#dundas').hover(function()
+	{
+		var dundasCoords = document.getElementById("dundas").coords.split(',');
+		context.strokeStyle = "rgba(193, 66, 66, 0.2)";
+		context.fillStyle = "rgba(193, 66, 66, 0.2)";
+		context.lineWidth = 1;
+		context.beginPath();
+		context.moveTo(dundasCoords[0],dundasCoords[1]);
+		for (x = 2, y = 3; x < dundasCoords.length-1, y < dundasCoords.length; x+=2, y+=2) 
+		{
+			context.lineTo(dundasCoords[x],dundasCoords[y]);
+		}
+		context.lineTo(dundasCoords[0],dundasCoords[1]);
+		context.closePath();
+		context.stroke();
+		context.fill();
+	},
+	function()
+	{
+		context.clearRect(0, 0, canvas.width, canvas.height);
+	});
+			
+	$('#dundas').click(function() 
+	{
+		$("#dundasdiv").toggle(function()
+		{
+			$("#dundasdiv").show();
+			var clicks = $(this).data('clicks');
+			if (clicks) 
+			{
+				context.clearRect(0, 0, canvas.width, canvas.height);
+				var dundasCoords = document.getElementById("dundas").coords.split(',');
+				context.strokeStyle = "rgba(193, 66, 66, 0.4)";
+				context.fillStyle = "rgba(193, 66, 66, 0.4)";
+				context.lineWidth = 1;
+				context.beginPath();
+				context.moveTo(dundasCoords[0],dundasCoords[1]);
+				for (x = 2, y = 3; x < dundasCoords.length-1, y < dundasCoords.length; x+=2, y+=2) 
+				{
+					context.lineTo(dundasCoords[x],dundasCoords[y]);
+				}
+				context.lineTo(dundasCoords[0],dundasCoords[1]);
+				context.stroke();
+				context.fill();			
+				$("#dundasdiv").hide();
+			} 
+			else 
+			{
+				context.clearRect(0, 0, canvas.width, canvas.height);
+				var dundasCoords = document.getElementById("dundas").coords.split(',');
+				context.strokeStyle = "rgba(46, 138, 138, 0.4)";
+				context.fillStyle = "rgba(46, 138, 138, 0.4)";
+				context.lineWidth = 1;
+				context.beginPath();
+				context.moveTo(dundasCoords[0],dundasCoords[1]);
+				for (x = 2, y = 3; x < dundasCoords.length-1, y < dundasCoords.length; x+=2, y+=2) 
+				{
+					context.lineTo(dundasCoords[x],dundasCoords[y]);
+				}
+				context.lineTo(dundasCoords[0],dundasCoords[1]);
+				context.stroke();
+				context.fill();
+			}
+			$(this).data("clicks", !clicks);
+		});
+	});
+});
+		</script>
+		<div align = "center">
+			<div id = "main">
+				<canvas id = "canvashamilton" width = "494px" height = "494px" ></canvas>
+				<img src="img\hamilton.png" id = "image" alt="" usemap="Map"/>
+					<map id = "Map" name="Map">
+						<area id = "flamborough" alt="Flamborough" title="Flamborough" href="#flamboroughdiv" shape="poly" coords="191,71,162,99,167,109,95,128,105,168,73,177,99,264,195,240,197,237,225,220,228,220,229,221,230,220,231,220,233,220,235,220,237,220,237,219,239,218,241,217,243,217,245,215,245,211,246,209,248,208,249,208,250,209,251,208,250,201,252,201,253,200,254,199,257,196,260,194,275,178,277,178,280,180,281,176,283,174,284,172,286,168,288,164" />
+				
+						<area id = "ancaster" alt="Ancaster" title="Ancaster" href="#ancasterdiv" shape="poly" coords="98,266,99,272,233,334,252,272,251,271,251,269,251,270,251,269,253,268,252,267,253,264,253,263,251,262,251,260,251,257,251,256,250,254,250,252,251,251,251,249,251,247,249,244,244,245,243,244,243,244,243,242,243,240,243,240,240,237,216,241,216,238,215,237,199,241,196,241" />
+				
+						<area id = "glanbrook" alt="Glanbrook" title="Glanbrook" href="#glanbrook" shape="poly" coords="311,293,295,287,252,275,233,335,351,390,371,319,374,308,314,289" />
+				
+						<area id = "stoneycreek" alt="Stoney Creek" title="Stoney Creek" href="#stoneycreekdiv" shape="poly" coords="422,256,420,254,419,253,417,253,415,255,413,255,411,256,408,257,407,259,405,259,403,259,401,259,401,257,399,257,398,256,397,255,395,254,393,254,393,252,391,252,391,251,390,251,388,251,387,250,386,250,385,250,383,249,383,249,381,249,379,249,377,249,377,249,375,249,374,249,373,249,371,247,370,247,368,246,367,245,366,244,365,244,363,243,362,243,361,243,360,243,358,245,358,247,358,249,358,250,357,251,356,253,355,254,354,256,353,257,351,256,349,256,348,256,347,256,345,256,345,255,344,255,344,254,342,255,342,257,341,258,341,259,340,260,340,261,341,263,341,263,341,265,340,267,338,268,337,269,337,269,335,269,334,269,333,271,333,271,331,271,331,272,328,273,326,273,325,273,324,273,322,273,321,273,321,275,320,276,320,277,318,277,317,277,316,278,315,280,315,282,314,283,313,285,313,288,313,289,316,290,319,290,323,293,327,293,330,294,332,294,337,297,342,298,347,299,350,300,355,303,360,303,364,305,367,305,370,307,374,308,375,309,377,311,381,312,387,312,389,313,392,314,395,314,398,315,400,316,402,317" />
+				
+						<area id = "hamilton" alt="Hamilton" title="Hamilton" href="#hamiltondiv" shape="poly" coords="311,293,312,291,313,287,313,283,315,280,316,279,317,277,319,278,320,275,321,274,325,274,327,273,329,273,331,272,333,272,335,269,337,269,339,267,339,265,339,264,339,263,339,260,340,259,340,257,341,255,342,254,342,254,343,254,344,254,347,254,348,255,349,255,351,256,353,256,355,257,355,253,357,250,358,248,358,246,359,244,359,243,359,241,357,241,354,241,351,240,349,239,347,238,346,235,343,232,340,228,338,225,337,224,336,221,333,218,333,217,332,213,331,212,331,209,329,206,327,203,323,217,319,215,316,214,313,214,311,213,309,212,309,212,307,215,304,222,301,222,299,221,297,220,297,221,294,219,293,219,291,219,290,219,289,219,287,220,286,221,286,222,281,223,278,223,276,222,275,221,275,218,273,215,274,214,276,214,277,212,277,212,277,210,274,209,274,208,273,211,271,211,271,213,271,215,269,218,268,219,267,222,266,223,264,223,263,224,261,224,261,224,259,225,258,225,257,225,255,225,254,226,253,226,252,226,251,227,250,229,250,230,250,231,249,232,247,232,247,234,245,235,244,236,243,236,243,238,244,241,244,241,247,241,250,245,250,247,251,250,251,252,251,255,252,257,252,259,255,261,255,263,255,265,255,267,255,268,254,269,253,271,253,271,253,272,253,273" />
+				
+						<area id = "dundas" alt="Dundas" title="Dundas" href="#dundasdiv" shape="poly" coords="197,238,197,240,198,241,198,242,199,241,201,240,208,238,209,238,212,237,214,237,216,236,217,236,217,237,217,237,218,238,218,240,219,241,221,241,223,239,224,239,225,240,227,241,229,241,231,239,234,239,235,238,235,238,236,237,238,237,239,236,241,235,242,235,244,234,245,233,246,233,247,233,248,232,248,231,249,230,249,230,249,229,250,228,250,228,250,227,250,227,251,226,252,225,255,225,258,225,259,223,261,222,263,222,264,222,266,220,267,219,267,219,268,217,268,217,269,215,269,214,269,214,269,213,269,213,270,212,270,210,269,209,269,208,270,206,269,205,268,204,266,203,265,202,264,201,264,200,263,199,262,199,262,198,262,198,261,197,259,198,253,203,253,205,252,207,250,209,248,209,245,213,245,214,243,216,243,219,238,221,234,222,230,223,229,223,226,223,225,223,224,223" />
+					</map>
+			</div>
+		</div>
+				
+		<div id = "ancasterdiv" align = "center">
+			<h1 id = "cities" align = "center">Ancaster, Ontario</h1>
+			<h3 id = "population" align = "center">Population: 43,103</h3>
+			<p id = "text" align = "center">Text</p>
+		</div>
+		
+		<div id = "flamboroughdiv" align = "center">
+			<h1 id = "cities" align = "center">Flamborough, Ontario</h1>
+			<h3 id = "population" align = "center">Population: 22,300</h3>
+			<p id = "text" align = "center">Text</p>
+		</div>
+		
+		<div id = "dundasdiv" align = "center">
+			<h1 id = "cities" align = "center">Dundas, Hamilton</h1>
+			<h3 id = "population" align = "center">Population: 24,710</h3>
+			<p id = "text" align = "center">Text</p>
+		</div>
+		
+		<div id = "hamiltondiv" align = "center">
+			<h1 id = "cities" align = "center">Hamilton, Ontario</h1>
+			<h3 id = "population" align = "center">Population: 781,100</h3>
+			<p id = "text" align = "center">Text</p>
+		</div>
+		
+		<div id = "glanbrookdiv" align = "center">
+			<h1 id = "cities" align = "center">Glanbrook, Ontario</h1>
+			<h3 id = "population" align = "center">Population: 97,025</h3>
+			<p id = "text" align = "center">Text</p>
+		</div>
+		
+		<div id = "stoneycreekdiv" align = "center">
+			<h1 id = "cities" align = "center">Stoney Creek, Ontario</h1>
+			<h3 id = "population" align = "center">Population: 89,630</h3>
+			<p id = "text" align = "center">Text</p>
+		</div>
+    </body>
+</html>
